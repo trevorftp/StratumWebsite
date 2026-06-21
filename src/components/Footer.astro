@@ -9,17 +9,29 @@ const shortSha = __GIT_SHORT_SHA__;
 
 <footer class="mt-auto border-t border-stone-800">
   <div class="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-8 sm:flex-row sm:items-center sm:justify-between">
-    <div class="flex items-center gap-3 text-sm text-stone-500">
+    <div class="flex items-center gap-2 text-sm text-stone-500">
       <span>&copy; {year} Stratum contributors. MIT License.</span>
       {shortSha && (
-        <a
-          href={`https://github.com/trevorftp/StratumWebsite/commit/${sha}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="font-mono text-xs hover:text-stone-300 transition-colors"
-        >
-          {shortSha}
-        </a>
+        <span class="text-stone-600">·</span>
+        <span class="font-mono text-xs">
+          <a
+            href="https://github.com/trevorftp/StratumWebsite"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-stone-400 hover:text-stone-200 transition-colors"
+          >
+            trevorftp/StratumWebsite
+          </a>
+          {' @ '}
+          <a
+            href={`https://github.com/trevorftp/StratumWebsite/commit/${sha}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-stone-400 hover:text-stone-200 transition-colors"
+          >
+            {shortSha}
+          </a>
+        </span>
       )}
     </div>
     <div class="flex gap-5">
