@@ -1,13 +1,10 @@
 ---
-import { execSync } from 'node:child_process';
+declare const __GIT_SHA__: string;
+declare const __GIT_SHORT_SHA__: string;
 
 const year = new Date().getFullYear();
-let sha = '';
-let shortSha = '';
-try {
-  sha = execSync('git rev-parse HEAD').toString().trim();
-  shortSha = execSync('git rev-parse --short HEAD').toString().trim();
-} catch {}
+const sha = __GIT_SHA__;
+const shortSha = __GIT_SHORT_SHA__;
 ---
 
 <footer class="mt-auto border-t border-stone-800">
