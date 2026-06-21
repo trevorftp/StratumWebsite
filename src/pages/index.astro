@@ -1,0 +1,142 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="Home" description="Dedicated server software for Vintage Story.">
+  <Nav />
+
+  <main>
+    <!-- Hero -->
+    <section class="relative flex min-h-[80vh] flex-col items-center justify-center px-6 text-center">
+      <img
+        src="/stratum-hero.png"
+        alt=""
+        class="absolute inset-0 h-full w-full object-cover opacity-20"
+        aria-hidden="true"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-stone-950/60 via-stone-950/40 to-stone-950" aria-hidden="true"></div>
+      <div class="relative flex flex-col items-center text-center">
+        <img src="/logo-notxt.png" alt="" width="80" height="80" class="mb-6" aria-hidden="true" />
+        <h1 class="text-6xl font-bold tracking-tight text-stone-50 sm:text-8xl">Stratum</h1>
+        <p class="mt-5 text-xl text-stone-300">Dedicated server software for Vintage Story.</p>
+        <p class="mt-2 max-w-xl text-base text-stone-400">Stratum improves Vintage Story dedicated servers with performance tuning, built-in staff tools, and protection against common server abuse.</p>
+        <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <a
+          href="/downloads"
+          class="rounded-md bg-amber-500 px-5 py-2.5 text-sm font-semibold text-stone-950 transition-colors hover:bg-amber-400"
+        >
+          Download
+        </a>
+        <a
+          href="/docs"
+          class="rounded-md border border-stone-700 px-5 py-2.5 text-sm font-semibold text-stone-100 transition-colors hover:border-stone-500 hover:bg-stone-900"
+        >
+          Documentation
+        </a>
+        <a
+          href="https://discord.gg/pd24fawhsD"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-md border border-stone-700 px-5 py-2.5 text-sm font-semibold text-stone-400 transition-colors hover:border-stone-500 hover:text-stone-100"
+        >
+          Discord
+        </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="mx-auto max-w-5xl px-6 py-24">
+      <h2 class="mb-12 text-center text-2xl font-bold text-stone-100">What's included</h2>
+      <div class="grid gap-6 sm:grid-cols-3">
+        <div class="rounded-xl border border-stone-800 bg-stone-900 p-6">
+          <h3 class="mb-4 font-semibold text-stone-100">Performance</h3>
+          <ul class="space-y-2 text-sm text-stone-400">
+            <li>Chunk loading distributed fairly across all players</li>
+            <li>Join handling stays stable when multiple players connect</li>
+            <li>Tick and IO work is budgeted to reduce lag spikes</li>
+            <li>Pathfinding and entity work prioritized near active players</li>
+          </ul>
+        </div>
+        <div class="rounded-xl border border-stone-800 bg-stone-900 p-6">
+          <h3 class="mb-4 font-semibold text-stone-100">Server Tools</h3>
+          <ul class="space-y-2 text-sm text-stone-400">
+            <li>Homes, TPA, warps, and messaging included</li>
+            <li>Staff tools: vanish, freeze, mute, jail, warn, and notes</li>
+            <li>Chat formatting, role prefixes, and nametag styling</li>
+            <li>Performance, packet, and violation reports</li>
+          </ul>
+        </div>
+        <div class="rounded-xl border border-stone-800 bg-stone-900 p-6">
+          <h3 class="mb-4 font-semibold text-stone-100">Protection</h3>
+          <ul class="space-y-2 text-sm text-stone-400">
+            <li>Packet limits and back-pressure prevent server flooding</li>
+            <li>Block-break validation catches suspicious client behavior</li>
+            <li>Login protection during the join window</li>
+            <li>Client mod policy controls</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Install -->
+    <section class="border-y border-stone-800 bg-stone-900/30 px-6 py-24">
+      <div class="mx-auto max-w-2xl">
+        <h2 class="mb-12 text-center text-2xl font-bold text-stone-100">Get started</h2>
+        <ol class="space-y-8">
+          <li class="flex gap-5">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500/15 text-sm font-semibold text-amber-500">1</span>
+            <div>
+              <p class="font-medium text-stone-100">Download the latest release</p>
+              <p class="mt-1.5 text-sm text-stone-400">
+                Get the <code class="rounded bg-stone-800 px-1.5 py-0.5 font-mono text-xs text-stone-300">stratum-&lt;version&gt;-&lt;rid&gt;.zip</code> for your
+                platform from the <a href="https://github.com/trevorftp/Stratum/releases" target="_blank" rel="noopener noreferrer" class="text-amber-500 hover:text-amber-400 transition-colors">releases page</a>.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-5">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500/15 text-sm font-semibold text-amber-500">2</span>
+            <div>
+              <p class="font-medium text-stone-100">Extract the archive</p>
+              <p class="mt-1.5 text-sm text-stone-400">Extract it to the directory you want to run the server from.</p>
+            </div>
+          </li>
+          <li class="flex gap-5">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500/15 text-sm font-semibold text-amber-500">3</span>
+            <div>
+              <p class="font-medium text-stone-100">Run the server</p>
+              <div class="mt-2.5 space-y-2">
+                <div class="rounded-lg bg-stone-800 px-4 py-2.5 font-mono text-xs text-stone-300">
+                  <span class="text-stone-500"># Windows</span><br />
+                  StratumServer.exe
+                </div>
+                <div class="rounded-lg bg-stone-800 px-4 py-2.5 font-mono text-xs text-stone-300">
+                  <span class="text-stone-500"># Linux</span><br />
+                  dotnet StratumServer.dll
+                </div>
+              </div>
+              <p class="mt-2 text-sm text-stone-400">First launch downloads the matching vanilla server build.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Good for -->
+    <section class="mx-auto max-w-5xl px-6 py-24">
+      <h2 class="mb-10 text-center text-2xl font-bold text-stone-100">Good for</h2>
+      <ul class="mx-auto grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-2 text-sm text-stone-400">
+        <li class="flex items-start gap-2"><span class="mt-0.5 text-amber-600">-</span> Public multiplayer servers</li>
+        <li class="flex items-start gap-2"><span class="mt-0.5 text-amber-600">-</span> Servers with busy spawn areas</li>
+        <li class="flex items-start gap-2"><span class="mt-0.5 text-amber-600">-</span> Event and civ-style servers</li>
+        <li class="flex items-start gap-2"><span class="mt-0.5 text-amber-600">-</span> PvP servers wanting privacy and staff tools</li>
+        <li class="flex items-start gap-2"><span class="mt-0.5 text-amber-600">-</span> Modded servers that need better reports</li>
+        <li class="flex items-start gap-2"><span class="mt-0.5 text-amber-600">-</span> Servers that want control without a client mod</li>
+      </ul>
+    </section>
+  </main>
+
+  <Footer />
+</Base>
